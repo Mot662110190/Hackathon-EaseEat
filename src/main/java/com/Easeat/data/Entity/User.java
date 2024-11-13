@@ -17,6 +17,10 @@ public class User {
     private String email;
     private String password;
     private String level;
+    private String bmi;
+    private String post;
+    private String chat;
+
     public User() {
     }
     public User(int id, String name) {
@@ -64,6 +68,24 @@ public class User {
 
     public void setLevel(String level) {
         this.level = level;
+    }
+    public String getBmi() {
+        return bmi;
+    }
+    public void setBmi(String bmi) {
+        this.bmi = bmi;
+    }
+    public String getPost() {
+        return post;
+    }
+    public void setPost(String post) {
+        this.post = post;
+    }
+    public String getChat() {
+        return chat;
+    }
+    public void setChat(String chat) {
+        this.chat = chat;
     }
 
   
