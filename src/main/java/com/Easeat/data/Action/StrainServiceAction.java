@@ -32,14 +32,19 @@ public class StrainServiceAction implements StrainService{
 
     @Override
     public Strain findById(Integer id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findById'");
+       Optional<Strain> result = strainRepository.findById(id);
+       Strain data=null;
+        if(result.isPresent()){
+            data=result.get();
+        }else{
+            throw new RuntimeException("ไม่พบข้อมูล"+id);
+        }
+        return data;
     }
 
     @Override
     public void deleteById(Integer id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteById'");
+        strainRepository.deleteById(id);
     }
 
     

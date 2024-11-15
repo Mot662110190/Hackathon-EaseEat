@@ -29,7 +29,14 @@ public class Post {
     @ManyToOne
     @JoinColumn(name = "User_id_Post")
     private User user;
-
+    
+    public Post() {
+    }
+    public Post(int id, String title, String body) {
+        this.id = id;
+        this.title = title;
+        this.body = body;
+    }
     public int getId() {
         return id;
     }

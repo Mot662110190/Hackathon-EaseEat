@@ -9,5 +9,7 @@ public interface PostService {
          Post save(Post post);
          List<Post> findAll();
          Post findByTitle(String Title);
-         Post findByCreatedAt(LocalDateTime createdAt);
+         Post findById(Integer id); 
+         void deleteById(Integer id);
+         void deleteAll();
 }
