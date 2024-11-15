@@ -1,4 +1,4 @@
-package com.Easeat.data.services;
+package com.Easeat.data.Action;
 
 import java.util.List;
 import java.util.Optional;
@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.Easeat.data.Entity.User;
 import com.Easeat.data.repository.UserRepository;
+import com.Easeat.data.services.UserService;
 
 @Service
 public class UserServiceAction implements UserService{

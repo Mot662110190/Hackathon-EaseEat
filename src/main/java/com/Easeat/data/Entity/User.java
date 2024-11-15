@@ -1,9 +1,12 @@
 package com.Easeat.data.Entity;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -16,11 +19,27 @@ public class User {
     private String name;
     private String email;
     private String password;
-    private String level;
-    private String bmi;
-    private String post;
+
+    @OneToMany
+    private List<Strain> levels;
+    @OneToMany
+    private List<Bmr> bmi;
+    @OneToMany
+    private List<Post> post;
     private String chat;
 
+    public List<Bmr> getBmi() {
+        return bmi;
+    }
+    public void setBmi(List<Bmr> bmi) {
+        this.bmi = bmi;
+    }
+    public List<Post> getPost() {
+        return post;
+    }
+    public void setPost(List<Post> post) {
+        this.post = post;
+    }
     public User() {
     }
     public User(int id, String name) {
@@ -62,24 +81,11 @@ public class User {
         this.password = password;
     }
 
-    public String getLevel() {
-        return level;
+    public List<Strain> getLevels() {
+        return levels;
     }
-
-    public void setLevel(String level) {
-        this.level = level;
-    }
-    public String getBmi() {
-        return bmi;
-    }
-    public void setBmi(String bmi) {
-        this.bmi = bmi;
-    }
-    public String getPost() {
-        return post;
-    }
-    public void setPost(String post) {
-        this.post = post;
+    public void setLevels(List<Strain> levels) {
+        this.levels = levels;
     }
     public String getChat() {
         return chat;
@@ -87,6 +93,8 @@ public class User {
     public void setChat(String chat) {
         this.chat = chat;
     }
+    
+    
 
   
 
