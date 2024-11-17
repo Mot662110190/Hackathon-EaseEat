@@ -2,6 +2,11 @@ package com.Easeat.data.Entity;
 
 import java.time.LocalDateTime;
 
+import com.Easeat.data.jackson.LocalDateTimeDeserializer;
+import com.Easeat.data.jackson.LocalDateTimeSerializer;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -52,7 +57,8 @@ public class Strain {
     public void setLevels(String levels) {
         this.levels = levels;
     }
-
+    @JsonSerialize(using = LocalDateTimeSerializer.class)
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     public LocalDateTime getDate() {
         return date;
     }

@@ -3,6 +3,11 @@ package com.Easeat.data.Entity;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import com.Easeat.data.jackson.LocalDateTimeDeserializer;
+import com.Easeat.data.jackson.LocalDateTimeSerializer;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -60,7 +65,9 @@ public class Post {
     public void setBody(String body) {
         this.body = body;
     }
-
+    
+    @JsonSerialize(using = LocalDateTimeSerializer.class)
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     public LocalDateTime getCreatedAt() {
         return createdAt;
     }

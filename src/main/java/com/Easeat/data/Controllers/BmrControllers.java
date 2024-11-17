@@ -13,9 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.Easeat.data.Entity.Bmr;
-import com.Easeat.data.Entity.User;
 import com.Easeat.data.services.BmrService;
-import com.Easeat.data.services.UserService;
 
 @RestController
 @RequestMapping("/api")
