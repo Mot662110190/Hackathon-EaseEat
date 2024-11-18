@@ -46,6 +46,5 @@ public class StrainServiceAction implements StrainService{
     public void deleteById(Integer id) {
         strainRepository.deleteById(id);
     }
-
     
 }

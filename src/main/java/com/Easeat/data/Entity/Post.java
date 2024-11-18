@@ -37,10 +37,11 @@ public class Post {
     
     public Post() {
     }
-    public Post(int id, String title, String body) {
+    public Post(int id, String title, String body,LocalDateTime createdAt) {
         this.id = id;
         this.title = title;
         this.body = body;
+        this.createdAt = createdAt;
     }
     public int getId() {
         return id;

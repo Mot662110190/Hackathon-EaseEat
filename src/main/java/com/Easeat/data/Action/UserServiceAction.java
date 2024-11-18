@@ -10,6 +10,7 @@ import com.Easeat.data.Entity.User;
 import com.Easeat.data.repository.UserRepository;
 import com.Easeat.data.services.UserService;
 
+
 @Service
 public class UserServiceAction implements UserService{
     
@@ -46,7 +47,6 @@ public class UserServiceAction implements UserService{
     public void deleteById(Integer id) {
         userRepository.deleteById(id);
     }
-
    
 
 }

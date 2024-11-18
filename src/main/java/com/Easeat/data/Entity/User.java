@@ -12,37 +12,34 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "user")
 public class User {
+   
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     
     private String name;
-    private String email;
+    private String username;
     private String password;
 
-    @OneToMany
-    private List<Strain> levels;
-    @OneToMany
-    private List<Bmr> bmi;
-    @OneToMany
-    private List<Post> post;
+    @OneToMany(mappedBy = "user")
+    private List<Strain> Strain;
+    @OneToMany(mappedBy = "user")
+    private List<Bmr> Bmr;
+    @OneToMany(mappedBy = "user")
+    private List<Post> Post;
+    
+    public String getUsername() {
+        return username;
+    }
+    public void setUsername(String username) {
+        this.username = username;
+    }
     private String chat;
 
-    public List<Bmr> getBmi() {
-        return bmi;
-    }
-    public void setBmi(List<Bmr> bmi) {
-        this.bmi = bmi;
-    }
-    public List<Post> getPost() {
-        return post;
-    }
-    public void setPost(List<Post> post) {
-        this.post = post;
-    }
+   
     public User() {
     }
-    public User(int id, String name) {
+    public User(int id, String name,List<Strain> Strain,List<Bmr> Bmr,List<Post> Post) {
         this.id = id;
         this.name = name;
     }
@@ -65,13 +62,7 @@ public class User {
         this.name = name;
     }
 
-    public String getEmail() {
-        return email;
-    }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
 
     public String getPassword() {
         return password;
@@ -81,12 +72,7 @@ public class User {
         this.password = password;
     }
 
-    public List<Strain> getLevels() {
-        return levels;
-    }
-    public void setLevels(List<Strain> levels) {
-        this.levels = levels;
-    }
+    
     public String getChat() {
         return chat;
     }
@@ -94,7 +80,24 @@ public class User {
         this.chat = chat;
     }
     
-    
+    public List<Strain> getStrain() {
+        return Strain;
+    }
+    public void setStrain(List<Strain> strain) {
+        Strain = strain;
+    }
+    public List<Bmr> getBmr() {
+        return Bmr;
+    }
+    public void setBmr(List<Bmr> bmr) {
+        Bmr = bmr;
+    }
+    public List<Post> getPost() {
+        return Post;
+    }
+    public void setPost(List<Post> post) {
+        Post = post;
+    }
 
   
 

@@ -8,5 +8,4 @@ import com.Easeat.data.Entity.Post;
 
 public interface PostRepository extends JpaRepository<Post,Integer>{
     Optional<Post> findByTitle(String title);
-
 }

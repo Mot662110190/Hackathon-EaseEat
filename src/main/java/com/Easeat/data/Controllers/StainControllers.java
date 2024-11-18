@@ -24,7 +24,6 @@ private StrainService strainService;
      public StainControllers(StrainService strainService) {
         this.strainService = strainService;
     }
-
    @PostMapping("/strain")
     public Strain addstrain (@RequestBody Strain strain){
                strain.setId(0);
@@ -35,6 +34,8 @@ private StrainService strainService;
     public List<Strain> getAllstrain(){
         return strainService.findAll();
     }
+    
+    
     @GetMapping("/strain/{id}")
     public Strain getstrain(@PathVariable int id){
         Strain myStrain =  strainService.findById(id);
@@ -56,4 +57,6 @@ private StrainService strainService;
     public Strain updatestrain (@RequestBody Strain strain){
         return strainService.save(strain);
 }
+
 }
+

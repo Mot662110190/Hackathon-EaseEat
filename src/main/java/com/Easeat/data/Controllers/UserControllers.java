@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.Easeat.data.Entity.User;
 import com.Easeat.data.services.UserService;
 
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +38,7 @@ public class UserControllers {
     public List<User> getAllUser(){
         return userService.findAll();
     }
+    
 
     @GetMapping("/users/{id}")
     public User getUser(@PathVariable int id){
@@ -46,7 +48,7 @@ public class UserControllers {
     }
     return myUser;
     }
-    @DeleteMapping("/user/{id}")
+    @DeleteMapping("/users/{id}")
     public String deleteUser(@PathVariable int id){
         User myUser =  userService.findById(id);
         if(myUser==null){
@@ -59,4 +61,6 @@ public class UserControllers {
     public User updateUser (@RequestBody User user){
         return userService.save(user);
 }
+
+
 }

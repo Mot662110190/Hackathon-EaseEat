@@ -33,11 +33,11 @@ public class Bmr {
     public Bmr() {
     }
 
-    public Bmr(int id, String bmr) {
+    public Bmr(int id, String bmr,LocalDateTime date) {
         this.id = id;
         this.bmr = bmr;
     }
-    public Bmr(int id, String bmr, User user) {
+    public Bmr(int id, String bmr, User user,LocalDateTime date) {
         this.id = id;
         this.bmr = bmr;
         this.user = user;
@@ -50,8 +50,7 @@ public class Bmr {
     public void setId(int id) {
         this.id = id;
     }
-    @JsonSerialize(using = LocalDateTimeSerializer.class)
-    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
+
     public String getBmr() {
         return bmr;
     }
@@ -59,7 +58,9 @@ public class Bmr {
     public void setBmr(String bmr) {
         this.bmr = bmr;
     }
-
+    
+    @JsonSerialize(using = LocalDateTimeSerializer.class)
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     public LocalDateTime getDate() {
         return date;
     }

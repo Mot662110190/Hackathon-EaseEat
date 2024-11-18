@@ -27,6 +27,7 @@ public class Comment {
     @ManyToOne
     @JoinColumn(name = "Post_id")
     private Post post;
+    
     public int getId() {
         return id;
     }

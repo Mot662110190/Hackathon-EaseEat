@@ -26,20 +26,23 @@ public class Strain {
     private LocalDateTime date;
 
     @ManyToOne
-    @JoinColumn(name = "User_id_Strain")
+    @JoinColumn(name = "User_id_strain")
     private User user;
 
     public Strain() {
     }
 
-    public Strain(int id, String levels) {
+    public Strain(int id, String levels,LocalDateTime date) {
         this.id = id;
         this.levels = levels;
+        this.date = date;
     }
-    public Strain(int id, String levels, User user) {
+    public Strain(int id, String levels, User user,LocalDateTime date) {
         this.id = id;
         this.levels = levels;
         this.user = user;
+        this.date = date;
+
     }
 
     public int getId() {
@@ -57,6 +60,7 @@ public class Strain {
     public void setLevels(String levels) {
         this.levels = levels;
     }
+
     @JsonSerialize(using = LocalDateTimeSerializer.class)
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     public LocalDateTime getDate() {
