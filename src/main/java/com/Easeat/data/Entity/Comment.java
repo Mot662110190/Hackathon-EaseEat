@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 
 import com.Easeat.data.jackson.LocalDateTimeDeserializer;
 import com.Easeat.data.jackson.LocalDateTimeSerializer;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
@@ -26,6 +27,7 @@ public class Comment {
     
     @ManyToOne
     @JoinColumn(name = "Post_id")
+    @JsonBackReference
     private Post post;
     
     public int getId() {

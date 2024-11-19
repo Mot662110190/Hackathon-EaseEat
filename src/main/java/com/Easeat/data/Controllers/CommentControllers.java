@@ -38,16 +38,16 @@ public class CommentControllers {
     }
     @GetMapping("/comment/{id}")
     public Comment getComment(@PathVariable int id){
-        Comment myStrain =  commentService.findById(id);
-       if(myStrain==null){
+        Comment myComment =  commentService.findById(id);
+       if(myComment==null){
         throw new RuntimeException("เกิดข้อผิดพลาดในกระบวนการทำงาน");
     }
-    return myStrain;
+    return myComment;
     }
     @DeleteMapping("/comment/{id}")
     public String deleteComment(@PathVariable int id){
-        Comment myStrain =  commentService.findById(id);
-        if(myStrain==null){
+        Comment myComment =  commentService.findById(id);
+        if(myComment==null){
             throw new RuntimeException("เกิดข้อผิดพลาดในกระบวนการทำงาน");
         }
         commentService.deleteById(id);

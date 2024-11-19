@@ -6,9 +6,11 @@ import java.util.List;
 public class UserDTO {
     private int id;
     
+    
     private String name;
     private String username;
     private String password;
+    private int member;
     private List<StrainDTO> strain;
     private List<BmrDTO> bmr;
     private List<PostDTO> post;
@@ -55,6 +57,11 @@ public class UserDTO {
     public void setPost(List<PostDTO> post) {
         this.post = post;
     }
-
+    public int getMember() {
+        return member;
+    }
+    public void setMember(int member) {
+        this.member = member;
+    }
 
 }

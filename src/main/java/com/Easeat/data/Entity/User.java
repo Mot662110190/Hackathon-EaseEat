@@ -21,9 +21,10 @@ public class User {
     private int id;
     
     private String name;
+    
     private String username;
     private String password;
-
+    private int member = 0;
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     @JsonManagedReference
     private List<Strain> strain;
@@ -103,7 +104,12 @@ public class User {
     public void setPost(List<Post> post) {
         this.post = post;
     }
-    
+    public int getMember() {
+        return member;
+    }
+    public void setMember(int member) {
+        this.member = member;
+    }
     
 
   
