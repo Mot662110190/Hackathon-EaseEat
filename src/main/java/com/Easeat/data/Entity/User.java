@@ -2,6 +2,9 @@ package com.Easeat.data.Entity;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,12 +24,15 @@ public class User {
     private String username;
     private String password;
 
-    @OneToMany(mappedBy = "user")
-    private List<Strain> Strain;
-    @OneToMany(mappedBy = "user")
-    private List<Bmr> Bmr;
-    @OneToMany(mappedBy = "user")
-    private List<Post> Post;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @JsonManagedReference
+    private List<Strain> strain;
+    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
+    @JsonManagedReference
+    private List<Bmr> bmr;
+    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
+    @JsonManagedReference
+    private List<Post> post;
     
     public String getUsername() {
         return username;
@@ -79,25 +85,26 @@ public class User {
     public void setChat(String chat) {
         this.chat = chat;
     }
-    
     public List<Strain> getStrain() {
-        return Strain;
+        return strain;
     }
     public void setStrain(List<Strain> strain) {
-        Strain = strain;
+        this.strain = strain;
     }
     public List<Bmr> getBmr() {
-        return Bmr;
+        return bmr;
     }
     public void setBmr(List<Bmr> bmr) {
-        Bmr = bmr;
+        this.bmr = bmr;
     }
     public List<Post> getPost() {
-        return Post;
+        return post;
     }
     public void setPost(List<Post> post) {
-        Post = post;
+        this.post = post;
     }
+    
+    
 
   
 

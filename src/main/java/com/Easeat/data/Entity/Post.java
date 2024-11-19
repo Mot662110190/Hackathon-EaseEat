@@ -5,9 +5,12 @@ import java.util.List;
 
 import com.Easeat.data.jackson.LocalDateTimeDeserializer;
 import com.Easeat.data.jackson.LocalDateTimeSerializer;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -28,11 +31,13 @@ public class Post {
     private LocalDateTime createdAt;
     private String Category;
     
-    @OneToMany
+   @OneToMany(mappedBy = "post",cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Comment> Comment;
 
     @ManyToOne
     @JoinColumn(name = "User_id_Post")
+    @JsonBackReference
     private User user;
     
     public Post() {

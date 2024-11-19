@@ -17,11 +17,11 @@ import com.Easeat.data.services.StrainService;
 
 @RestController
 @RequestMapping("/api")
-public class StainControllers {
+public class StrainControllers {
 private StrainService strainService;
 
     @Autowired
-     public StainControllers(StrainService strainService) {
+     public StrainControllers(StrainService strainService) {
         this.strainService = strainService;
     }
    @PostMapping("/strain")

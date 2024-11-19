@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 
 import com.Easeat.data.jackson.LocalDateTimeDeserializer;
 import com.Easeat.data.jackson.LocalDateTimeSerializer;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
@@ -28,6 +29,7 @@ public class Bmr {
 
     @ManyToOne
     @JoinColumn(name = "User_id_Bmr")
+    @JsonBackReference
     private User user;
 
     public Bmr() {
