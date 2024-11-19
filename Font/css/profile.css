@@ -1,0 +1,74 @@
+/* Profile Section Styling */
+.profile-container {
+    max-width: 600px;
+    margin: 150px auto;
+    background-color: #ffffff;
+    padding: 100px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.profile-title, .history-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4A628A;
+    margin-bottom: 20px;
+}
+
+.profile-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.label {
+    background-color: #7AB2D3;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-right: 10px;
+    white-space: nowrap;
+}
+
+.input-field {
+    flex: 1;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    background-color: #7AB2D3;
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+}
+
+.stress-indicator {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: #F6682B;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+/* Assessment History Styling */
+.assessment-history {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.assessment-button {
+    background-color: #7AB2D3;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+    width: auto;
+}
