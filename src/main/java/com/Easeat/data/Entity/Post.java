@@ -33,8 +33,8 @@ public class Post {
     
    @OneToMany(mappedBy = "post",cascade = CascadeType.ALL)
     @JsonManagedReference
-    private List<Comment> Comment;
-
+    private List<Comment> comment;
+   
     @ManyToOne
     @JoinColumn(name = "User_id_Post")
     @JsonBackReference
@@ -91,11 +91,11 @@ public class Post {
     }
 
     public List<Comment> getComment() {
-        return Comment;
+        return comment;
     }
 
-    public void setComment(List<Comment> comment) {
-        Comment = comment;
+    public void setComment(List<Comment> Comment) {
+        this.comment = Comment;
     }
 
     public User getUser() {

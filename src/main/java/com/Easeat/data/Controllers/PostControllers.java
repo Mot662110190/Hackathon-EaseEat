@@ -3,6 +3,7 @@ package com.Easeat.data.Controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +18,7 @@ import com.Easeat.data.services.PostService;
 
 @RestController
 @RequestMapping("/api")
+@CrossOrigin(origins = "*") // อนุญาตทุก Origin (หรือระบุเฉพาะ Origin ที่ต้องการ)
 public class PostControllers {
 private PostService postService;
 
@@ -24,7 +26,6 @@ private PostService postService;
     public PostControllers(PostService postService) {
         this.postService = postService;
     }
-
    @PostMapping("/posts")
     public Post addPost (@RequestBody Post post){
         post.setId(0);
